@@ -3,67 +3,399 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mateen - Personal Website</title>
+  <title>Abdul Mateen – MBZUAI Video Statement</title>
   <link rel="shortcut icon" href="assets/MyPic.jpg" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ==============================
+       MBZUAI-Style Professional CSS
+       ============================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #e6e6e6;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(0, 230, 208, 0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00e6d0, #009bff, #00e6d0);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-top: 25px;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #bfbfbf;
+      margin: 15px 0 40px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .profile-img {
+      height: 130px;
+      width: 130px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 3px solid #00e6d0;
+      margin: 0 auto;
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0, 255, 200, 0.7);
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Section Styling */
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 35px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00e6d0;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #00e6d0, #009bff);
+      border-radius: 2px;
+    }
+
+    /* Video Section */
+    .video-section h2 {
+      font-size: 1.9rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0 10px;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      max-width: 750px;
+      height: 420px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
+      border: none;
+    }
+
+    /* Portfolio Boxes */
+    .portfolio-section h2 {
+      font-size: 1.7rem;
+    }
+
+    .portfolio-section p {
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+      color: #d1d1d1;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00e6d0, #009bff);
+      padding: 14px 32px;
+      color: #0a0a0a;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 230, 208, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #009bff, #00e6d0);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 230, 208, 0.5);
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
+    /* Contact */
+    .contact-section h2 {
+      font-size: 1.7rem;
+    }
+
+    .email {
+      font-size: 1.15rem;
+      margin-bottom: 25px;
+      color: #ffffff;
+      font-weight: 400;
+      background-color: rgba(128, 128, 128, 0.356);
+      border:1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 10px;
+    }
+
+    .social-links .so-links {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #e6e6e6;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-links .so-links:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: #00e6d0;
+    }
+
+    .icons {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+      filter: brightness(0.9);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      color: #999;
+      font-size: 0.95rem;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.9s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Stagger animation delays */
+    .hero {
+      animation-delay: 0.1s;
+    }
+    
+    .video-section {
+      animation-delay: 0.3s;
+    }
+    
+    .portfolio-section:nth-of-type(1) {
+      animation-delay: 0.5s;
+    }
+    
+    .portfolio-section:nth-of-type(2) {
+      animation-delay: 0.7s;
+    }
+    
+    .contact-section {
+      animation-delay: 0.9s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      
+      .video-wrapper iframe {
+        height: 250px;
+      }
+      
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .social-links .so-links {
+        width: 200px;
+        justify-content: center;
+      }
+      
+      section {
+        padding: 25px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 15px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .profile-img {
+        height: 120px;
+        width: 120px;
+      }
+      
+      .video-wrapper iframe {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <section class="hero fade-in">
-      <div class="por"><div class="profileimg"><img src="/assets/MyPic.jpg" alt="my pic" ></div><h1>Abdul Mateen</h1></div>
-      <p class="tagline">Aspiring Web Developer | MERN Stack Enthusiast</p>
-    </section>
+  <main class="container fade-in">
+    <header class="hero fade-in">
+      <div class="profile-img">
+        <img src="assets/MyPic.jpg" alt="Profile Photo">
+      </div>
+      <h1>Abdul Mateen</h1>
+      <p class="subtitle">AI & Web Development Enthusiast • Future MBZUAI Scholar</p>
+    </header>
 
-    <section class="video fade-in">
-      <h2>🎥 Personal Video Statement</h2>
+    <section class="video-section fade-in">
+      <h2> 📹 Personal Video Statement</h2>
       <div class="video-wrapper">
-      <iframe 
-    width="100%" 
-    height="450" 
-    src="https://www.youtube.com/embed/MrVr-tM-1XQ" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen
-  ></iframe>
-
-
-
+        <iframe src="https://www.youtube.com/embed/MrVr-tM-1XQ" allowfullscreen></iframe>
       </div>
     </section>
 
-    <section class="portfolio fade-in">
-      <p>Check out my web development Portfolio.</p>
-      <a href="https://myportfolio-abdulmateen.vercel.app/" target="_blank"  class="btn">View My Portfolio</a>
-    </section>
-    
-    <section class="portfolio fade-in">
-      <p>Check out my <b>AI</b> <b>ChatBot</b>.</p>
-      <a href="https://chatbot-abdulmateen.vercel.app/" target="_blank"  class="btn">Try my ChatBot</a>
+    <section class="portfolio-section fade-in">
+      <h2>Portfolio</h2>
+      <p>Explore my projects in Web Development and Artificial Intelligence. A showcase of my technical skills and creative solutions.</p>
+      <a class="btn" href="https://myportfolio-abdulmateen.vercel.app/" target="_blank">View Portfolio</a>
     </section>
 
-    <section class="contact fade-in">
-      <p class="email">📧 abdulmateensohailking@gmail.com</p>
-      <div class="social-icons">
-        <a href="https://github.com/MateenSohail-coder/" target="_blank" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.562 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z"/>
-          </svg>
+    <section class="portfolio-section fade-in">
+      <h2>AI ChatBot</h2>
+      <p>Check out my custom-built AI chatbot interface with advanced natural language processing capabilities.</p>
+      <a class="btn" href="https://chatbot-abdulmateen.vercel.app/" target="_blank">Try ChatBot</a>
+    </section>
+
+    <section class="contact-section fade-in">
+      <h2>Contact</h2>
+      <p class="email"> 📧 abdulmateensohailking@gmail.com</p>
+      <div class="social-links">
+        <a class="so-links" href="https://github.com/MateenSohail-coder" target="_blank"> 
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="icons" alt="GitHub"> 
+          GitHub
         </a>
-        <a href="https://profile.indeed.com/?hl=en_PK&co=PK&from=gnav-homepage" target="_blank" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
+        <a class="so-links" href="https://profile.indeed.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="icons" alt="LinkedIn"> 
+          Indeed
         </a>
       </div>
     </section>
+
+    <footer>
+      <p>© 2025 Abdul Mateen — Crafted with dedication and precision</p>
+    </footer>
   </main>
-  <footer>
-    <p>© 2025 Mateen — Built with ❤️</p>
-  </footer>
-  <script src="script.js"></script>
 </body>
 </html>
